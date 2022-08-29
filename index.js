@@ -17,19 +17,31 @@ while(i<=4){
         else{
             break;
         }
-             
-
+           
+        case 2:
+            let Juguetes =parseInt(prompt('1- Pelota $150\n2- Cuerda $80\n3- Hueso $130\n4- Salir')) 
+            if (Juguetes===1){
+                compra=compra+150
+    
+            }if(Juguetes===2){
+                compra=compra+80
+            }if(Juguetes===3){
+                compra=compra+130
+            }
+            else{
+                break;
+            }
+            
+            case 3:
+                alert('Puedes contactarnos mediante\nWhatsapp: 095478452\nMail: petshop@gmail.com')
+                break;
+            case 4:
+                break;
     }
+
     i=menu
 }
 
-alert(compra)
 
-// let numero =parseInt(prompt('Ingrese un numero del 1 al 10'))
-// let resultado
-// i=1
-// while(numero<=10 && numero>=1 && i<=10){
-//  resultado = numero * i
-//  alert(numero+ ' * '+ i + ' = '+ resultado)
-//  i++
-// }
+
+alert(compra)

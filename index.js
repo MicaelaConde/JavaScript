@@ -54,9 +54,9 @@ const juguete1 ={
  juguetes.push(juguete3)
 
 productos.push(juguetes)
-
+let h=0
 while (i <= 4) {
-  let h=0
+ 
   let menu = parseInt(
     prompt("      Menu\n1- Alimentos\n2- Juguetes\n3- Contacto\n4- Salir")
   );
@@ -71,7 +71,8 @@ while (i <= 4) {
       if (eligioAlimentos === 1) {
         carrito.push(productos[0][0])
         compra= compra + carrito[h].precio
-        h++
+        h=h+1
+        console.log(h)
         break;
       } else if (eligioAlimentos === 2) {
         carrito.push(productos[0][1])
@@ -129,7 +130,7 @@ while (i <= 4) {
   }
 }
 
-alert("Total de su compra es  " + "$" + compra);
+
 let a=0
 while (a<=4){
 let verCarrito=parseInt(prompt("A continuacion puede ver nuestra lista de productos, seleccione la opcion deseada\n 1- Alimentos\n 2- Juguetes\n 3- Ver su Carrito\n 4- Salir"))
@@ -139,12 +140,14 @@ if (verCarrito>4){
 }
  else if (verCarrito === 1){
     verListado(alimentos)
-    
     }else if(verCarrito=== 2){
       verListado(juguetes)
+      console.log(verCarrito)
     }
 
     else if(verCarrito === 3){
+      
+alert("Total de su compra es  " + "$" + compra);
       verListado(carrito)
     }
     else if(verCarrito === 4){

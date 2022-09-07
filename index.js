@@ -4,20 +4,30 @@ let i = 1;
 let productos = []
 let alimentos = []
 let juguetes = []
+let listado = []
 let carrito =[]
 
+function verListado(lista){
+  for(let i=0;i< lista.length;i++){
+    listado.push(lista[i])
+  console.log(listado[i].nombre ,"$",listado[i].precio)
+  }
+}
 const alimentoChico = {
+  nombre: "Bolsa chica",
   kilos:1,
   precio:120
 }
 alimentos.push(alimentoChico)
 
 const alimentoMediano = {
+  nombre:"Bolsa mediana",
   kilos:5,
   precio:500
 }
 alimentos.push(alimentoMediano)
 const alimentoGrande ={
+  nombre:"Bolsa grande",
   kilos: 10,
   precio: 840
 }
@@ -26,29 +36,33 @@ alimentos.push(alimentoGrande)
 
 
 const juguete1 ={
-  item:"Pelota",
+  nombre:"Pelota",
   precio:150
 }
  juguetes.push(juguete1)
 
  const juguete2 ={
-  item: "Cuerda",
+  nombre: "Cuerda",
   precio:80
  }
  juguetes.push(juguete2)
 
  const juguete3 ={
-  item:"Hueso",
+  nombre:"Hueso",
   precio:130
  }
+ juguetes.push(juguete3)
 
 productos.push(juguetes)
+
 while (i <= 4) {
+  let h=0
   let menu = parseInt(
     prompt("      Menu\n1- Alimentos\n2- Juguetes\n3- Contacto\n4- Salir")
   );
   switch (menu) {
     case 1:
+
       let eligioAlimentos = parseInt(
         prompt(
           "1- Bolsa 1kg $120\n2- Bolsa 5kg $500\n3- Bolsa 10kg $840\n4- Salir"
@@ -56,15 +70,18 @@ while (i <= 4) {
       );
       if (eligioAlimentos === 1) {
         carrito.push(productos[0][0])
-        compra= compra + carrito[0].precio
+        compra= compra + carrito[h].precio
+        h++
         break;
       } else if (eligioAlimentos === 2) {
         carrito.push(productos[0][1])
-        compra = compra + carrito[1].precio
+        compra = compra + carrito[h].precio
+        h++
         break;
       } else if (eligioAlimentos === 3) {
         carrito.push(productos[0][2])
-        compra = compra + carrito[2].precio;
+        compra = compra + carrito[h].precio;
+        h++
         break;
       } else if (eligioAlimentos === 4) {
         i = 5;
@@ -80,15 +97,18 @@ while (i <= 4) {
       );
       if (eligioJuguetes === 1) {
         carrito.push(productos[1][0])
-        compra = compra + carrito[1].precio;
+        compra = compra + carrito[h].precio;
+        h++
         break;
-      } else if (eligioJuguetes === 2) {
+      } if (eligioJuguetes === 2) {
         carrito.push(productos[1][1])
-        compra = compra + carrito[1].precio;
+        compra = compra + carrito[h].precio;
+        h++
         break;
       } else if (eligioJuguetes === 3) {
         carrito.push(productos[1][2])
-        compra = compra + carrito[2].precio;
+        compra = compra + carrito[h].precio;
+        h++
         break;
       } else if (eligioJuguetes === 4) {
         i = 5;
@@ -110,3 +130,25 @@ while (i <= 4) {
 }
 
 alert("Total de su compra es  " + "$" + compra);
+let a=0
+while (a<=4){
+let verCarrito=parseInt(prompt("A continuacion puede ver nuestra lista de productos, seleccione la opcion deseada\n 1- Alimentos\n 2- Juguetes\n 3- Ver su Carrito\n 4- Salir"))
+
+if (verCarrito>4){
+  alert("Ingrese una opcion valida")
+}
+ else if (verCarrito === 1){
+    verListado(alimentos)
+    
+    }else if(verCarrito=== 2){
+      verListado(juguetes)
+    }
+
+    else if(verCarrito === 3){
+      verListado(carrito)
+    }
+    else if(verCarrito === 4){
+      break
+    }
+
+} 
